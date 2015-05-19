@@ -28,7 +28,7 @@ namespace Models
 		void DeleteModel(const std::string& gameModelName);
 		unsigned int GetModel(const std::string& gameModelName);
 	private:
-		std::map<std::string, Model> GameModeList;  //for storing models
+		std::map<std::string, Model> GameModelList;  //for storing models
 	};
 
 }

@@ -1,29 +1,8 @@
 #version 420 core
+layout(location = 0) in vec3 in_position; //set the first input on index 0 for the in_position attribute.
 
-void main(void)
+void main()
 {
-	const vec4 vertices[22] = vec4[22](vec4(-0.25, 0.25, 0.5, 1.0),
-									  vec4( 0.25,  0.25, 0.5, 1.0),
-									  vec4(    0,     0, 0.5, 1.0),
-									  vec4(-0.25, -0.25, 0.5, 1.0),
-									  vec4( 0.25, -0.25, 0.5, 1.0),
-									  vec4( 0.25,  0.25, 0.5, 1.0),
-									  vec4(   .5,     0, 0.5, 1.0),
-									  vec4(-0.25,  0.25, 0.5, 1.0),
-									  vec4(-0.25, -0.25, 0.5, 1.0),
-									  vec4( -0.5,     0, 0.5, 1.0),
-									  vec4( -0.8,   0.8, 0.5, 1.0),
-									  vec4(-0.25,   0.8, 0.5, 1.0),
-									  vec4( -0.8,  0.25, 0.5, 1.0),
-									  vec4( -0.8, -0.25, 0.5, 1.0),
-									  vec4( -0.8,  -0.8, 0.5, 1.0),
-									  vec4(-0.25,  -0.8, 0.5, 1.0),
-									  vec4(  0.8, -0.25, 0.5, 1.0),
-									  vec4(  0.8,  -0.8, 0.5, 1.0),
-									  vec4( 0.25,  -0.8, 0.5, 1.0),
-									  vec4( 0.25,   0.8, 0.5, 1.0),
-									  vec4(  0.8,   0.8, 0.5, 1.0),
-									  vec4(  0.8,  0.25, 0.5, 1.0));
+	gl_Position = vec4(in_position, 1.0); //w is 1, we added a dimension to cast as a vec4.
 
-	gl_Position = vertices[gl_VertexID];
 }
