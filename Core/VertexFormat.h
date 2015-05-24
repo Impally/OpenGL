@@ -6,9 +6,12 @@
 struct VertexFormat
 {
 	glm::vec3 position; //First attribute
-	VertexFormat(const glm::vec3 &pos)
+	glm::vec4 color;
+
+	VertexFormat(const glm::vec3 &iPos, const glm::vec4 &iColor)
 	{
-		position = pos;
+		position = iPos;
+		color = iColor;
 	}
 };
 
