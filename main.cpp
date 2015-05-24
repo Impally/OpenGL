@@ -4,9 +4,11 @@
 #include <vector>
 #include <stdlib.h>
 #include <stdio.h>
-#include "Core\Shader_Loader.h"
+#include "Managers\Shader_Manager.h"
 #include "Core\GameModels.h"
-using namespace Core;
+using namespace Managers;
+
+Managers::Shader_Manager* shaderManager;
 
 Models::GameModels* gameModels;
 GLuint program;
@@ -39,10 +41,12 @@ void Init()
 	gameModels->CreateTriangleModel("triangle1");
 
 	//load and compile shaders
-	Core::Shader_Loader shaderLoader;
-	program = shaderLoader.CreateProgram("Shaders\\Vertex_Shader.glsl",
-		"Shaders\\Fragment_Shader.glsl");
-	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+	shaderManager = new Managers::Shader_Manager(); 
+	
+	shaderManager->CreateProgram("colorShader", 
+								 "Shaders\\Vertex_Shader.glsl", 
+								 "Shaders\\Fragment_Shader.glsl");
+	program = Managers::Shader_Manager::GetShader("colorShader");
 }
 
 int main(int argc, char **argv)
@@ -62,6 +66,6 @@ int main(int argc, char **argv)
 	glutMainLoop();
 
 	delete gameModels;
-	glDeleteProgram(program);
+	delete shaderManager;
 	return 0;
 }
