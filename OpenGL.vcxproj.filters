@@ -43,5 +43,11 @@
     <ClInclude Include="Core\Init\WindowInfo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Core\Init\FrameBufferInfo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Init\ContextInfo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

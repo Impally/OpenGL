@@ -79,6 +79,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core\GameModels.h" />
+    <ClInclude Include="Core\Init\ContextInfo.h" />
+    <ClInclude Include="Core\Init\FrameBufferInfo.h" />
     <ClInclude Include="Core\Init\WindowInfo.h" />
     <ClInclude Include="Core\VertexFormat.h" />
     <ClInclude Include="Managers\Shader_Manager.h" />
