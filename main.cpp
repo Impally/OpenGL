@@ -18,7 +18,7 @@ int main(int argc, char **argv)
 	Init::Init_GLUT::setListener(scene);
 
 	Init::Init_GLUT::run();
-
+	
 	delete scene;
 	return 0;
 }

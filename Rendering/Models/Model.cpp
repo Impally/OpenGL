@@ -2,7 +2,7 @@
 using namespace Rendering;
 using namespace Models;
 
-Model::Mode() {}
+Model::Model() {}
 
 Model::~Model()
 {
@@ -19,7 +19,7 @@ void Model::Update()
 	//will be overriden
 }
 
-void Model::SetPRogram(GLuint program)
+void Model::SetProgram(GLuint program)
 {
 	this->program = program;
 }
