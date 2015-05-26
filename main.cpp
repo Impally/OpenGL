@@ -1,7 +1,8 @@
 #pragma once
 #include "Core\Init\Init_GLUT.h"
+#include "Managers\Scene_Manager.h"
+
 using namespace Core;
-using namespace Init;
 
 int main(int argc, char **argv)
 {
@@ -11,8 +12,13 @@ int main(int argc, char **argv)
 						   true);
 	ContextInfo context(4, 2, true);
 	FramebufferInfo frameBufferInfo(true, true, true, true);
-	Init_GLUT::init(window, context, frameBufferInfo);
+	Init::Init_GLUT::init(window, context, frameBufferInfo);
 
-	Init_GLUT::run();
+	IListener* scene = new Managers::Scene_Manager();
+	Init::Init_GLUT::setListener(scene);
+
+	Init::Init_GLUT::run();
+
+	delete scene;
 	return 0;
 }
